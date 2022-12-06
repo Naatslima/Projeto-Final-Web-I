@@ -30,7 +30,13 @@ a {
     padding: 15px 25px;   
 }
 
-#cabecalho a:hover, #cabecalho  a:active {
+#cabecalho a:hover,  
+#cabecalho a:active,
+body.home #cabecalho a#home,
+body.jogos #cabecalho a#jogos,
+body.animesMangas #cabecalho a#animesMangas,
+body.cosplays #cabecalho a#cosplays,
+body.sobre #cabecalho a#sobre {
     background: #FFF;
     color: rgba(211, 54, 54, 0.815);
 
@@ -52,7 +58,7 @@ a {
 }
 #menu{
     max-width: 1080px;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     justify-content: center;
 }
@@ -60,6 +66,11 @@ a {
 #logo, #menu {
     padding: 25px;
 }
+#logo{
+    margin: auto;
+}
+
+
 
 /*conteudo*/
 
@@ -150,20 +161,24 @@ a:hover, a:active {
 }
 
 .postagens-sobre{
-    width: 900px;
-    flex: 2 1 500px;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    flex: 2 1 400px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
 }
 .postagem-sobre-texto{
+    width: 90%;
     max-width: 900px;
     padding: 20px;
-    flex: 4 1 400px;
+    flex: 1 1 400px;
 }
 .postagem-sobre-imagem img{
-    width: 200px;
+    width: 90%;
+    max-width: 200px;
     border: 1px groove rgba(211, 54, 54, 0.815);
     border-radius: 70%;
 }
@@ -210,19 +225,33 @@ ul {
     color: rgba(211, 54, 54, 0.815);
 }
 
-@media (max-width: 920px){
+@media screen and (min-width: 500px) and (max-width: 768px){
+    h1{
+        font-size: 2.5em;
+    }
     #area-lateral {
         width: 400px;
         margin: 10px 10px;
     }
-    #area-post-sobre {
-        width: 600px;
-    
+    .postagem-sobre{
+        width: 80%;
     }
+    #menu ul li{
+        margin: 20px auto;
+    }
+    
 }
 
-@media (max-width: 700px){
-   
+@media screen and (max-width: 500px){
+    
+    h1{
+        font-size: 2.5em;
+    }
+    #menu ul{
+        flex-direction: column;
+        margin: auto;
+    }
+
     #menu ul li a:link, #cabecalho a:visited {
         font-size: 1.2em;
         
@@ -252,6 +281,10 @@ ul {
     }
     .postagem-sobre-texto{
         max-width: 300px;
+    }
+    iframe{
+        width: 300px;
+        height: 200px;
     }
 }
 
